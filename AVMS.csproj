@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\avhm-bg.png" />
+    <None Remove="Resources\avhm.ico" />
+    <None Remove="Resources\avhs-bg-main.png" />
+    <None Remove="Resources\avhs-bg.png" />
+    <None Remove="Resources\AVMH.png" />
+    <None Remove="Resources\bg1.png" />
+    <None Remove="Resources\master.png" />
+    <None Remove="Resources\medical-symbol.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="5.3.2" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\avhm.ico" />
+    <Resource Include="Resources\avhs-bg-main.png" />
+    <Resource Include="Resources\avhs-bg.png" />
+    <Resource Include="Resources\AVMH.png" />
+    <Resource Include="Resources\bg1.png" />
+    <Resource Include="Resources\master.png" />
+    <Resource Include="Resources\medical-symbol.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\avhm-bg.png" />
+  </ItemGroup>
+
+</Project>

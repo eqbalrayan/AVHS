@@ -1,0 +1,372 @@
+<Window x:Class="AVMS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+
+        Title="ASHM"
+        Icon="/Resources/medical-symbol.png"
+        Height="600"
+        Width="1000"
+
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="CanResize"
+
+        Background="#F5F5F5">
+
+    <Border BorderBrush="#2196F3"
+            BorderThickness="1">
+
+        <Grid>
+
+            <!-- ROWS -->
+            <Grid.RowDefinitions>
+
+                <!-- TITLE BAR -->
+                <RowDefinition Height="25"/>
+
+                <!-- SUB TOPBAR -->
+                <RowDefinition Height="25"/>
+
+                <!-- CONTENT -->
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+
+            <!-- ================= TITLE BAR ================= -->
+
+            <Border Grid.Row="0"
+                    Background="#90CAF9">
+
+                <Grid>
+
+                    <!-- HOSPITAL TITLE -->
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center"
+                                Margin="12,0,0,0">
+
+                        <Image Source="/Resources/medical-symbol.png"
+                               Width="22"
+                               Height="22"
+                               Margin="0,0,8,0"/>
+
+                        <TextBlock Text="ASHTAVINAYAK MULTISPECIALITY HOSPITAL &amp; KARN ADVANCE ORTHO AND TRAUMA CENTRE "
+                                   Foreground="#263238"
+                                   FontSize="11"
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Center"/>
+
+                    </StackPanel>
+
+                    <!-- WINDOW BUTTONS -->
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top">
+
+                        <!-- MINIMIZE -->
+                        <Button x:Name="BtnMinimize"
+        Content="—"
+        Width="30"
+        Height="25"
+        FontSize="12"
+        FontWeight="Bold"
+        Foreground="White"
+        Background="Transparent"
+        BorderThickness="0"
+        Cursor="Hand">
+
+                            <Button.Template>
+
+                                <ControlTemplate TargetType="Button">
+
+                                    <Border x:Name="border"
+                    Background="Transparent">
+
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+
+                                    </Border>
+
+                                    <ControlTemplate.Triggers>
+
+                                        <!-- HOVER EFFECT -->
+                                        <Trigger Property="IsMouseOver"
+                         Value="True">
+
+                                            <Setter TargetName="border"
+                            Property="Background"
+                            Value="#42A5F5"/>
+
+                                        </Trigger>
+
+                                    </ControlTemplate.Triggers>
+
+                                </ControlTemplate>
+
+                            </Button.Template>
+
+                        </Button>
+                        <!-- MAXIMIZE -->
+                        <Button x:Name="BtnMaximize"
+        Content="☐"
+        Width="30"
+        Height="25"
+        FontSize="12"
+        Foreground="White"
+        Background="Transparent"
+        BorderThickness="0"
+        Cursor="Hand">
+
+                            <Button.Template>
+
+                                <ControlTemplate TargetType="Button">
+
+                                    <Border x:Name="border"
+                    Background="Transparent">
+
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+
+                                    </Border>
+
+                                    <ControlTemplate.Triggers>
+
+                                        <!-- HOVER -->
+                                        <Trigger Property="IsMouseOver"
+                         Value="True">
+
+                                            <Setter TargetName="border"
+                            Property="Background"
+                            Value="#42A5F5"/>
+
+                                        </Trigger>
+
+                                    </ControlTemplate.Triggers>
+
+                                </ControlTemplate>
+
+                            </Button.Template>
+
+                        </Button>
+
+                        <!-- CLOSE -->
+                        <Button x:Name="BtnClose"
+        Content="✕"
+        Width="30"
+        Height="25"
+        FontSize="12"
+        Foreground="White"
+        Background="Transparent"
+        BorderThickness="0"
+        Cursor="Hand">
+
+                            <Button.Template>
+
+                                <ControlTemplate TargetType="Button">
+
+                                    <Border x:Name="border"
+                    Background="Transparent">
+
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+
+                                    </Border>
+
+                                    <ControlTemplate.Triggers>
+
+                                        <!-- HOVER EFFECT -->
+                                        <Trigger Property="IsMouseOver"
+                         Value="True">
+
+                                            <Setter TargetName="border"
+                            Property="Background"
+                            Value="#E53935"/>
+
+                                        </Trigger>
+
+                                    </ControlTemplate.Triggers>
+
+                                </ControlTemplate>
+
+                            </Button.Template>
+
+                        </Button>
+
+                    </StackPanel>
+
+                </Grid>
+
+            </Border>
+
+            <!-- ================= SUB TOPBAR ================= -->
+
+
+            <Border Grid.Row="1"
+        Background="#BBDEFB"
+        Height="40"
+        BorderBrush="#BBDEFB"
+        BorderThickness="0,0,0,1">
+
+                <Menu Background="Transparent"
+          Foreground="#ffffff"
+          FontSize="14"
+          FontWeight="SemiBold"
+          VerticalAlignment="Center"
+          Padding="10,0">
+
+                    <Menu.Resources>
+
+                        <!-- TOP MENU STYLE -->
+                        <Style TargetType="MenuItem">
+
+                            <Setter Property="Foreground" Value="#37474F"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Padding" Value="15,8"/>
+                            <Setter Property="Margin" Value="2,0"/>
+                            <Setter Property="FontSize" Value="13"/>
+                            <Setter Property="FontWeight" Value="SemiBold"/>
+
+                            <Style.Triggers>
+
+                                <!-- Hover Effect -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#BBDEFB"/>
+                                    <Setter Property="Foreground" Value="#37474F"/>
+                                </Trigger>
+
+                            </Style.Triggers>
+
+                        </Style>
+
+                    </Menu.Resources>
+
+                    <!-- MASTER -->
+                    
+                    <MenuItem Header="Master">
+                        <Separator/>
+
+
+
+                        <MenuItem Header="Corporate Master"/>
+                        <Separator/>
+                        <MenuItem Header="Department Master"/>
+                        <Separator/>
+                        <MenuItem Header="Doctor Master"/>
+                        <Separator/>
+                        <MenuItem Header="Referral Master"/>
+                        <Separator/>
+                        <MenuItem Header="Complaint &amp; Diagnosis Master"/>
+                        <Separator/>
+                    </MenuItem>
+
+                    <!-- ADMINISTRATION -->
+                    <MenuItem Header="Administration">
+                        <Separator/>
+                        <MenuItem Header="Hospital Setup">
+                            <Separator/>
+
+
+                            <MenuItem Header="Service Group"/>
+                            <Separator/>
+                            <MenuItem Header="Service Master"/>
+                            <Separator/>
+                            <MenuItem Header="Service Charge"/>
+                            <Separator/>
+                            <MenuItem Header="Create Bed/Ward"/>
+                            <Separator/>
+                            <MenuItem Header="Auto Service Calculation"/>
+                            <Separator/>
+
+
+
+                        </MenuItem>
+                        <Separator/>
+                        <MenuItem Header="Tools"/>
+                        <Separator/>
+                        <MenuItem Header="Backup"/>
+                        <Separator/>
+                    </MenuItem>
+
+                    <!-- OPD -->
+                    <MenuItem Header="OPD">
+                        <Separator/>
+                        <MenuItem Header="New Patient Registration"
+                                  InputGestureText="Ctrl + R"
+                                  />
+                        <Separator/>
+                        <MenuItem Header="Patient Registration Modification"
+                                  InputGestureText="Ctrl + M"
+                                  
+                                  />
+                        <Separator/>
+                        <MenuItem Header="Patient Consultaion"
+                                  InputGestureText="Ctrl + C "
+                                  />
+                        <Separator/>
+                    </MenuItem>
+
+                    <!-- IPD -->
+                    <MenuItem Header="IPD">
+                        <MenuItem Header="Admission"/>
+                        <MenuItem Header="Ward Transfer"/>
+                        <MenuItem Header="Discharge"/>
+                    </MenuItem>
+
+                    <!-- BILLING -->
+                    <MenuItem Header="Billing">
+                        <MenuItem Header="OPD Billing"/>
+                        <MenuItem Header="IPD Billing"/>
+                        <MenuItem Header="Payment Collection"/>
+                    </MenuItem>
+
+                    <!-- REPORTS -->
+                    <MenuItem Header="Reports">
+                        <MenuItem Header="Daily Report"/>
+                        <MenuItem Header="Patient Report"/>
+                        <MenuItem Header="Income Report"/>
+                    </MenuItem>
+
+                    <!-- PHARMACY -->
+                    <MenuItem Header="Pharmacy">
+                        <MenuItem Header="Medicine Stock"/>
+                        <MenuItem Header="Purchase"/>
+                        <MenuItem Header="Sales"/>
+                    </MenuItem>
+
+                    <!-- ACCOUNTS -->
+                    <MenuItem Header="Accounts">
+                        <MenuItem Header="Cash Book"/>
+                        <MenuItem Header="Ledger"/>
+                        <MenuItem Header="Expenses"/>
+                    </MenuItem>
+
+                </Menu>
+
+            </Border>
+       
+
+
+            <!-- ================= CONTENT AREA ================= -->
+            <Grid Grid.Row="2"
+      Background="#F5F5F5">
+
+                
+                <Image Source="/Resources/bg1.png"
+           
+           Opacity="1"
+           Stretch="UniformToFill"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Center"/>
+
+               
+
+            </Grid>
+
+        </Grid>
+
+    </Border>
+
+</Window>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
